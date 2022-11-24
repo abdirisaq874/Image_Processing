@@ -1,0 +1,13 @@
+import cv2 as cv
+import numpy as np
+import matplotlib.pyplot as plt 
+
+img = cv.imread("/Users/mandeez/Downloads/my info/06.jpg",0)
+
+plt.imshow(img)
+
+for g in [3.0,4.0,5.0]:
+    g_e = np.array(255*(img / 255) ** g, dtype = 'uint8')
+    plt.imshow(g_e)
+    cv.waitKey(0)
+cv.destroyAllWindows()
